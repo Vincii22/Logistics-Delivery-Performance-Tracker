@@ -1,0 +1,8 @@
+# Jupyter
+
+.ipynb_checkpiopnts/
+
+# Data
+
+data/processed/*
+*.db
