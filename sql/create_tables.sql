@@ -24,3 +24,15 @@ CREATE TABLE dim_delivery_type (
 	delivery_type VARCHAR(50)
 );
 
+CREATE TABLE fact_delivery (
+	delivery_id VARCHAR(50) PRIMARY KEY,
+	delivery_date DATE, 
+	driver_id INT,
+	region_id INT,
+	delivery_type_id INT,
+	delivery_time_minutes INT,
+	on_time BOOLEAN,
+	FOREIGN KEY (driver_id) REFERENCES dim_driver(driver_id),
+	FOREIGN KEY (region_id) REFERENCES dim_region(region_id),
+	FOREIGN KEY (delivery_type_id)REFERENCES dim_delivery_type(delivery_type_id)
+);
